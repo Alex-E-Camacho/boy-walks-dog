@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = () => {
-  return (
-    <p>Pizza!!!</p>
-  )
+class App extends Component {
+  constructor(props) {
+    super(props);
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Dog's I've Walked</h1>
+      </div>
+    )
+  }
+
 }
 
 export default App;
