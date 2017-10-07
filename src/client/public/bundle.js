@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/Users/AlexCamacho/Desktop/react-hello-world/src/client/public";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 15);
@@ -21195,6 +21195,10 @@ var _DogImage = __webpack_require__(33);
 
 var _DogImage2 = _interopRequireDefault(_DogImage);
 
+var _lucy = __webpack_require__(34);
+
+var _lucy2 = _interopRequireDefault(_lucy);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21221,8 +21225,9 @@ var App = function (_Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Dog\'s I\'ve Walked!!'
+          'Dogs I Have Walked'
         ),
+        _react2.default.createElement('img', { src: _lucy2.default }),
         _react2.default.createElement(_DogImage2.default, null)
       );
     }
@@ -21251,18 +21256,16 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DogImage = function DogImage(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'span',
-      null,
-      'Hello World'
-    )
-  );
+  return _react2.default.createElement('div', null);
 };
 
 exports.default = DogImage;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+module.exports = "public/images/lucy.jpg";
 
 /***/ })
 /******/ ]);

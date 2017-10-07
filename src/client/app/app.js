@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DogImage from './DogImage.js';
+import Lucy from '../public/images/lucy.jpg';
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Dog's I've Walked!!</h1>
+        <h1>Dogs I Have Walked</h1>
+        <img src={Lucy} />
         <DogImage />
       </div>
     )
