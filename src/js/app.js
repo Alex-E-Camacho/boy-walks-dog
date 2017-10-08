@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DogImage from './DogImage.js';
-import Lucy from '../public/images/lucy.jpg';
-import Benji from '../public/images/benji.jpg';
+import Lucy from '../img/lucy.jpg';
+import Benji from '../img/benji.jpg';
 
 class App extends Component {
   constructor(props) {

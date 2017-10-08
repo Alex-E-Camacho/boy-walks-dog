@@ -21270,15 +21270,15 @@ exports.default = DogImage;
 
 /***/ }),
 /* 34 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "public/images/lucy.jpg";
+module.exports = __webpack_require__.p + "img/lucy.jpg";
 
 /***/ }),
 /* 35 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "public/images/benji.jpg";
+module.exports = __webpack_require__.p + "img/benji.jpg";
 
 /***/ })
 /******/ ]);
