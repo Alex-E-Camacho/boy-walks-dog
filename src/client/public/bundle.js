@@ -21227,7 +21227,7 @@ var App = function (_Component) {
           null,
           'Dogs I Have Walked'
         ),
-        _react2.default.createElement('img', { src: _lucy2.default }),
+        _react2.default.createElement('img', { src: _lucy2.default, height: '25%', width: '25%' }),
         _react2.default.createElement(_DogImage2.default, null)
       );
     }

@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div>
         <h1>Dogs I Have Walked</h1>
-        <img src={Lucy} />
+        <img src={Lucy} height="25%" width="25%"/>
         <DogImage />
       </div>
     )
