@@ -21199,6 +21199,10 @@ var _lucy = __webpack_require__(34);
 
 var _lucy2 = _interopRequireDefault(_lucy);
 
+var _benji = __webpack_require__(35);
+
+var _benji2 = _interopRequireDefault(_benji);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21227,8 +21231,7 @@ var App = function (_Component) {
           null,
           'Dogs I Have Walked'
         ),
-        _react2.default.createElement('img', { src: _lucy2.default, height: '25%', width: '25%' }),
-        _react2.default.createElement(_DogImage2.default, null)
+        _react2.default.createElement(_DogImage2.default, { imageSource: _lucy2.default })
       );
     }
   }]);
@@ -21256,7 +21259,11 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DogImage = function DogImage(props) {
-  return _react2.default.createElement('div', null);
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement("img", { src: props.imageSource, height: "25%", width: "25%" })
+  );
 };
 
 exports.default = DogImage;
@@ -21266,6 +21273,12 @@ exports.default = DogImage;
 /***/ (function(module, exports) {
 
 module.exports = "public/images/lucy.jpg";
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+module.exports = "public/images/benji.jpg";
 
 /***/ })
 /******/ ]);

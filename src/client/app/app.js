@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DogImage from './DogImage.js';
 import Lucy from '../public/images/lucy.jpg';
+import Benji from '../public/images/benji.jpg';
 
 class App extends Component {
   constructor(props) {
@@ -11,8 +12,7 @@ class App extends Component {
     return (
       <div>
         <h1>Dogs I Have Walked</h1>
-        <img src={Lucy} height="25%" width="25%"/>
-        <DogImage />
+        <DogImage imageSource={Lucy}/>
       </div>
     )
   }
