@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
-class Overlay extends Component {
-  
+const Overlay = (props) => {
+  return (
+    <div>
+      <p>This is the overlay</p>
+    </div>
+  )
 }
 
 export default Overlay;

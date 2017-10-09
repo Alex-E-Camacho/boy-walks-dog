@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import DogImage from './DogImage.js';
+import DogImage from './dogimage.js';
+import Overlay from './overlay.js';
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,9 @@ class App extends Component {
         <h1>Dogs I Have Walked</h1>
           <div>
             {mappedImageCollection}
+          </div>
+          <div>
+            <Overlay />
           </div>
       </div>
     )

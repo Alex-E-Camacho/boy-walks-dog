@@ -21191,9 +21191,13 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _DogImage = __webpack_require__(33);
+var _dogimage = __webpack_require__(39);
 
-var _DogImage2 = _interopRequireDefault(_DogImage);
+var _dogimage2 = _interopRequireDefault(_dogimage);
+
+var _overlay = __webpack_require__(40);
+
+var _overlay2 = _interopRequireDefault(_overlay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21215,12 +21219,12 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-      var requireImages = __webpack_require__(39);
+      var requireImages = __webpack_require__(34);
 
       var imageCollection = requireImages.keys().map(requireImages);
 
       var mappedImageCollection = imageCollection.map(function (dog) {
-        return _react2.default.createElement(_DogImage2.default, { imageSource: dog });
+        return _react2.default.createElement(_dogimage2.default, { imageSource: dog });
       });
 
       return _react2.default.createElement(
@@ -21235,6 +21239,11 @@ var App = function (_Component) {
           'div',
           null,
           mappedImageCollection
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_overlay2.default, null)
         )
       );
     }
@@ -21246,7 +21255,58 @@ var App = function (_Component) {
 exports.default = App;
 
 /***/ }),
-/* 33 */
+/* 33 */,
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./benji.jpg": 35,
+	"./dodger.jpg": 36,
+	"./locke.jpg": 37,
+	"./lucy.jpg": 38
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 34;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/benji.jpg";
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/dodger.jpg";
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/locke.jpg";
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/lucy.jpg";
+
+/***/ }),
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21273,55 +21333,35 @@ var DogImage = function DogImage(props) {
 exports.default = DogImage;
 
 /***/ }),
-/* 34 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/lucy.jpg";
+"use strict";
 
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/benji.jpg";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/***/ }),
-/* 36 */,
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
+var _react = __webpack_require__(3);
 
-module.exports = __webpack_require__.p + "img/dodger.jpg";
+var _react2 = _interopRequireDefault(_react);
 
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = __webpack_require__.p + "img/locke.jpg";
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./benji.jpg": 35,
-	"./dodger.jpg": 37,
-	"./locke.jpg": 38,
-	"./lucy.jpg": 34
+var Overlay = function Overlay(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'p',
+      null,
+      'This is the overlay'
+    )
+  );
 };
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 39;
+
+exports.default = Overlay;
 
 /***/ })
 /******/ ]);
