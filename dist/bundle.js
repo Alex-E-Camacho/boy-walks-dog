@@ -21195,14 +21195,6 @@ var _DogImage = __webpack_require__(33);
 
 var _DogImage2 = _interopRequireDefault(_DogImage);
 
-var _lucy = __webpack_require__(34);
-
-var _lucy2 = _interopRequireDefault(_lucy);
-
-var _benji = __webpack_require__(35);
-
-var _benji2 = _interopRequireDefault(_benji);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21223,6 +21215,14 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
+      var requireImages = __webpack_require__(39);
+
+      var imageCollection = requireImages.keys().map(requireImages);
+
+      var mappedImageCollection = imageCollection.map(function (dog) {
+        return _react2.default.createElement(_DogImage2.default, { imageSource: dog });
+      });
+
       return _react2.default.createElement(
         'div',
         null,
@@ -21231,7 +21231,11 @@ var App = function (_Component) {
           null,
           'Dogs I Have Walked'
         ),
-        _react2.default.createElement(_DogImage2.default, { imageSource: _lucy2.default })
+        _react2.default.createElement(
+          'div',
+          null,
+          mappedImageCollection
+        )
       );
     }
   }]);
@@ -21279,6 +21283,45 @@ module.exports = __webpack_require__.p + "img/lucy.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/benji.jpg";
+
+/***/ }),
+/* 36 */,
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/dodger.jpg";
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/locke.jpg";
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./benji.jpg": 35,
+	"./dodger.jpg": 37,
+	"./locke.jpg": 38,
+	"./lucy.jpg": 34
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 39;
 
 /***/ })
 /******/ ]);

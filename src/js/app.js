@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import DogImage from './DogImage.js';
-import Lucy from '../img/lucy.jpg';
-import Benji from '../img/benji.jpg';
 
 class App extends Component {
   constructor(props) {
@@ -9,10 +7,22 @@ class App extends Component {
   };
 
   render() {
+    let requireImages = require.context("../img", false, /\.jpg/);
+
+    let imageCollection = requireImages.keys().map(requireImages);
+
+    let mappedImageCollection = imageCollection.map((dog) => {
+      return (
+        <DogImage imageSource={dog} />
+      )
+    })
+
     return (
       <div>
         <h1>Dogs I Have Walked</h1>
-        <DogImage imageSource={Lucy}/>
+          <div>
+            {mappedImageCollection}
+          </div>
       </div>
     )
   }
