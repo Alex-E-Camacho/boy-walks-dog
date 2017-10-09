@@ -21215,7 +21215,7 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-      var requireImages = __webpack_require__(39);
+      var requireImages = __webpack_require__(34);
 
       var imageCollection = requireImages.keys().map(requireImages);
 
@@ -21276,36 +21276,11 @@ exports.default = DogImage;
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/lucy.jpg";
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/benji.jpg";
-
-/***/ }),
-/* 36 */,
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/dodger.jpg";
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/locke.jpg";
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var map = {
 	"./benji.jpg": 35,
-	"./dodger.jpg": 37,
-	"./locke.jpg": 38,
-	"./lucy.jpg": 34
+	"./dodger.jpg": 36,
+	"./locke.jpg": 37,
+	"./lucy.jpg": 38
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -21321,7 +21296,31 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 39;
+webpackContext.id = 34;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/benji.jpg";
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/dodger.jpg";
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/locke.jpg";
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/lucy.jpg";
 
 /***/ })
 /******/ ]);
