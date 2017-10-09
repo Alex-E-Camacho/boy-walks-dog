@@ -21213,7 +21213,12 @@ var App = function (_Component) {
   function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      selectedImage: "no image selected"
+    };
+    return _this;
   }
 
   _createClass(App, [{
@@ -21243,7 +21248,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_overlay2.default, null)
+          _react2.default.createElement(_overlay2.default, { displayedImage: this.state.selectedImage })
         )
       );
     }
@@ -21356,7 +21361,7 @@ var Overlay = function Overlay(props) {
     _react2.default.createElement(
       'p',
       null,
-      'This is the overlay'
+      props.displayedImage
     )
   );
 };

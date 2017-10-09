@@ -5,6 +5,10 @@ import Overlay from './overlay.js';
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selectedImage: "no image selected"
+    }
   };
 
   render() {
@@ -25,7 +29,7 @@ class App extends Component {
             {mappedImageCollection}
           </div>
           <div>
-            <Overlay />
+            <Overlay displayedImage={this.state.selectedImage} />
           </div>
       </div>
     )
