@@ -21191,11 +21191,11 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _dogimage = __webpack_require__(39);
+var _dogimage = __webpack_require__(33);
 
 var _dogimage2 = _interopRequireDefault(_dogimage);
 
-var _overlay = __webpack_require__(40);
+var _overlay = __webpack_require__(34);
 
 var _overlay2 = _interopRequireDefault(_overlay);
 
@@ -21216,20 +21216,28 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
-      selectedImage: "no image selected"
+      selectedImage: null
     };
+
+    _this.overlayDisplayOnClick = _this.overlayDisplayOnClick.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
+    key: 'overlayDisplayOnClick',
+    value: function overlayDisplayOnClick(imagePath) {
+      this.setState({ selectedImage: imagePath });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var requireImages = __webpack_require__(34);
+      var _this2 = this;
 
+      var requireImages = __webpack_require__(35);
       var imageCollection = requireImages.keys().map(requireImages);
 
       var mappedImageCollection = imageCollection.map(function (dog) {
-        return _react2.default.createElement(_dogimage2.default, { imageSource: dog });
+        return _react2.default.createElement(_dogimage2.default, { imageSource: dog, imageClick: _this2.overlayDisplayOnClick });
       });
 
       return _react2.default.createElement(
@@ -21260,15 +21268,104 @@ var App = function (_Component) {
 exports.default = App;
 
 /***/ }),
-/* 33 */,
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DogImage = function (_Component) {
+  _inherits(DogImage, _Component);
+
+  function DogImage(props) {
+    _classCallCheck(this, DogImage);
+
+    return _possibleConstructorReturn(this, (DogImage.__proto__ || Object.getPrototypeOf(DogImage)).call(this, props));
+  }
+
+  _createClass(DogImage, [{
+    key: "handleClick",
+    value: function handleClick(source) {
+      this.props.imageClick(source);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement("img", { src: this.props.imageSource, onClick: this.handleClick.bind(this, this.props.imageSource), height: "25%", width: "25%" })
+      );
+    }
+  }]);
+
+  return DogImage;
+}(_react.Component);
+
+;
+
+exports.default = DogImage;
+
+/***/ }),
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Overlay = function Overlay(_ref) {
+  var displayedImage = _ref.displayedImage;
+
+  if (!displayedImage) {
+    return null;
+  };
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement('img', { src: displayedImage })
+  );
+};
+
+exports.default = Overlay;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var map = {
-	"./benji.jpg": 35,
-	"./dodger.jpg": 36,
-	"./locke.jpg": 37,
-	"./lucy.jpg": 38
+	"./benji.jpg": 36,
+	"./dodger.jpg": 37,
+	"./locke.jpg": 38,
+	"./lucy.jpg": 39
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -21284,89 +21381,31 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 34;
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/benji.jpg";
+webpackContext.id = 35;
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/dodger.jpg";
+module.exports = __webpack_require__.p + "img/benji.jpg";
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/locke.jpg";
+module.exports = __webpack_require__.p + "img/dodger.jpg";
 
 /***/ }),
 /* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/lucy.jpg";
+module.exports = __webpack_require__.p + "img/locke.jpg";
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DogImage = function DogImage(props) {
-  return _react2.default.createElement(
-    "div",
-    null,
-    _react2.default.createElement("img", { src: props.imageSource, height: "25%", width: "25%" })
-  );
-};
-
-exports.default = DogImage;
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Overlay = function Overlay(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'p',
-      null,
-      props.displayedImage
-    )
-  );
-};
-
-exports.default = Overlay;
+module.exports = __webpack_require__.p + "img/lucy.jpg";
 
 /***/ })
 /******/ ]);

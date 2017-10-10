@@ -7,18 +7,23 @@ class App extends Component {
     super(props);
 
     this.state = {
-      selectedImage: "no image selected"
-    }
+      selectedImage: null
+    };
+
+    this.overlayDisplayOnClick = this.overlayDisplayOnClick.bind(this);
+  };
+
+  overlayDisplayOnClick(imagePath) {
+    this.setState({selectedImage: imagePath})
   };
 
   render() {
     let requireImages = require.context("../img", false, /\.jpg/);
-
     let imageCollection = requireImages.keys().map(requireImages);
 
     let mappedImageCollection = imageCollection.map((dog) => {
       return (
-        <DogImage imageSource={dog} />
+        <DogImage imageSource={dog} imageClick={this.overlayDisplayOnClick}/>
       )
     })
 

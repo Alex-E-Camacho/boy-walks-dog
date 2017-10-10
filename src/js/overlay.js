@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
-const Overlay = (props) => {
+const Overlay = ({displayedImage}) => {
+  if (!displayedImage) {
+    return null;
+  };
+
   return (
     <div>
-      <p>{props.displayedImage}</p>
+      <img src={displayedImage} />
     </div>
   )
 }
