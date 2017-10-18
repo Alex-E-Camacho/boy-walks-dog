@@ -11,11 +11,17 @@ class App extends Component {
     };
 
     this.overlayDisplayOnClick = this.overlayDisplayOnClick.bind(this);
+    this.resetSelectedImage = this.resetSelectedImage.bind(this);
   };
 
   overlayDisplayOnClick(imagePath) {
     this.setState({selectedImage: imagePath})
   };
+
+  resetSelectedImage() {
+    console.log("button clicked");
+    this.setState({selectedImage: null})
+  }
 
   render() {
     let requireImages = require.context("../img", false, /\.jpg/);
@@ -23,7 +29,7 @@ class App extends Component {
 
     let mappedImageCollection = imageCollection.map((dog) => {
       return (
-        <DogImage imageSource={dog} imageClick={this.overlayDisplayOnClick}/>
+        <DogImage imageSource={dog} imageClick={this.overlayDisplayOnClick} />
       )
     })
 
@@ -34,7 +40,7 @@ class App extends Component {
             {mappedImageCollection}
           </div>
           <div>
-            <Overlay displayedImage={this.state.selectedImage} />
+            <Overlay displayedImage={this.state.selectedImage} closeOverlay={this.resetSelectedImage} />
           </div>
       </div>
     )
