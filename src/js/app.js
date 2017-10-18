@@ -33,6 +33,12 @@ class App extends Component {
       )
     })
 
+    let overlay = null;
+
+    if (this.state.selectedImage) {
+        overlay = <Overlay displayedImage={this.state.selectedImage} closeOverlay={this.resetSelectedImage} />
+    }
+
     return (
       <div>
         <h1>Dogs I Have Walked</h1>
@@ -40,7 +46,7 @@ class App extends Component {
             {mappedImageCollection}
           </div>
           <div>
-            <Overlay displayedImage={this.state.selectedImage} closeOverlay={this.resetSelectedImage} />
+            {overlay}
           </div>
       </div>
     )
