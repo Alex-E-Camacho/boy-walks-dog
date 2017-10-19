@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <main>
         <div id="title-container">
-          <h1 id="title">Boy Walks Dog</h1>
+          <h1 id="title">boy walks dog</h1>
         </div>
           <div id="gallery">
             {mappedImageCollection}
