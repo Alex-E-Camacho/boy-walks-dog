@@ -9,7 +9,7 @@ class Overlay extends Component {
 
   render() {
     return (
-      <div>
+      <div id="overlay">
         <img id="overlay-image" src={this.props.displayedImage} />
         <button type="button" onClick={this.props.closeOverlay}>Close</button>
       </div>
