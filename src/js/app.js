@@ -19,7 +19,6 @@ class App extends Component {
   };
 
   resetSelectedImage() {
-    console.log("button clicked");
     this.setState({selectedImage: null})
   }
 
@@ -40,15 +39,17 @@ class App extends Component {
     }
 
     return (
-      <div>
-        <h1>Dogs I Have Walked</h1>
-          <div>
+      <main>
+        <div id="title-container">
+          <h1 id="title">Boy Walks Dog</h1>
+        </div>
+          <div id="gallery">
             {mappedImageCollection}
           </div>
           <div>
             {overlay}
           </div>
-      </div>
+      </main>
     )
   }
 

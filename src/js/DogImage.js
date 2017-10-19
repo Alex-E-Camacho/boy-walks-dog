@@ -11,9 +11,7 @@ class DogImage extends Component {
 
   render() {
     return (
-      <div>
-        <img src={this.props.imageSource} onClick={this.handleClick.bind(this, this.props.imageSource)} height="25%" width="25%"/>
-      </div>
+        <img className="dog-image" src={this.props.imageSource} onClick={this.handleClick.bind(this, this.props.imageSource)} />
     )
   }
 };
