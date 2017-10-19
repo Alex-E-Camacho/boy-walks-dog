@@ -14,7 +14,12 @@ body{
 .dog-image {
   max-width: 33%;
   max-height: 33%;
-  padding-bottom: 3px;
+  margin: .5px;
+}
+
+#overlay-image {
+  max-width: 55%;
+  max-height: 55%;
 }
 
 #title {
