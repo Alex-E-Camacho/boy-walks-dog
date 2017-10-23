@@ -1,5 +1,5 @@
 body{
-  /*background-color: #284a82;*/
+  background-image: url('../img/pattern6.png');
 }
 
 #gallery {
@@ -14,7 +14,7 @@ body{
 .dog-image {
   max-width: 33%;
   max-height: 33%;
-  margin: .5px;
+  padding: 1px;
 }
 
 #overlay-image {
@@ -39,13 +39,21 @@ body{
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+#close-overlay {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
 #title {
   font-family: 'Cinzel Decorative', cursive;
   text-align: center;
   font-size: 75px;
+  color: white;
 }
 
 #title-container {
   margin: auto;
   width: 60%;
+  background-color: black;
 }
