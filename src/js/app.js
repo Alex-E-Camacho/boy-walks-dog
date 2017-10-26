@@ -40,15 +40,20 @@ class App extends Component {
 
     return (
       <main>
-        <div id="title-container">
-          <h1 id="title">boy walks dog</h1>
-        </div>
-          <div id="gallery">
-            {mappedImageCollection}
-          </div>
+        <div className="bar">
           <div>
-            {overlay}
+            <h1 className="title">boy walks dog</h1>
           </div>
+        </div>
+        <div className="spacer">
+        </div>
+        <div className="gallery">
+          {mappedImageCollection}
+        </div>
+
+        <div>
+          {overlay}
+        </div>
       </main>
     )
   }
