@@ -1,7 +1,8 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-image: url('../img/pattern7.png');
+  /*background-image: url('../img/pattern7.png');*/
+  background-image: url('../img/pattern8.png'), linear-gradient(-90deg, #282525, #1C1919);
 }
 
 .gallery {
@@ -15,8 +16,7 @@ body {
 
 .dog-image {
   max-width: 31%;
-  /*max-height: 31%;*/
-  padding-bottom: 15px;
+  /*padding-bottom: 15px;*/
 }
 
 .overlay-image {
@@ -52,12 +52,12 @@ body {
   text-align: center;
   font-size: 75px;
   color: white;
-  background-color: black;
+  background-color: #282525;
 }
 
 .bar {
   position: fixed;
-  background-color: #C26464;
+  background-color: #070404;
   width: 100%;
   box-shadow: 0px 0px 5px 0px;
 }
