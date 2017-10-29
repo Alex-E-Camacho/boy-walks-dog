@@ -16,7 +16,8 @@ body {
 
 .dog-image {
   max-width: 31%;
-  /*padding-bottom: 15px;*/
+  margin-bottom: 15px;
+  border: 1px solid white;
 }
 
 .overlay-image {
@@ -28,6 +29,7 @@ body {
   right: 30%;
   left: 20%;
   bottom: 10%;
+  border: 1px solid #FFEBE2;
 }
 
 .overlay {
@@ -51,7 +53,7 @@ body {
   font-family: 'Cinzel Decorative', cursive;
   text-align: center;
   font-size: 75px;
-  color: white;
+  color: #FFFAFA;
   background-color: #282525;
 }
 
