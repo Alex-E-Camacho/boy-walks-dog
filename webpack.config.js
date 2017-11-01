@@ -1,5 +1,6 @@
 let webpack = require('webpack');
 let path = require('path');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let BUILD_DIR = path.resolve(__dirname, 'dist');
 let APP_DIR = path.resolve(__dirname, 'src');
@@ -28,9 +29,19 @@ let config = {
           name: '[name].[ext]',
           outputPath: 'img/'
         }
+      },
+      {
+        test: /\.html$/,
+        include: APP_DIR,
+        loader: 'html-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
+  ]
 };
 
 module.exports = config;
