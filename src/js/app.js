@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DogImage from './dogimage.js';
 import Overlay from './overlay.js';
+require('../css/index.css'); 
 
 class App extends Component {
   constructor(props) {

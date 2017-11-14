@@ -1,6 +1,7 @@
 let webpack = require('webpack');
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let BUILD_DIR = path.resolve(__dirname, 'dist');
 let APP_DIR = path.resolve(__dirname, 'src');
@@ -34,13 +35,21 @@ let config = {
         test: /\.html$/,
         include: APP_DIR,
         loader: 'html-loader'
+      },
+      {
+        test: /\.css$/,
+        include: APP_DIR + '/css',
+        loader: ExtractTextPlugin.extract({
+          use: 'css-loader'
+        })
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new ExtractTextPlugin("css/index.css")
   ]
 };
 
