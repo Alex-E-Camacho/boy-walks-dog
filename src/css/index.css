@@ -6,17 +6,26 @@ body {
 
 .gallery {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   max-width: 80%;
   margin: auto;
 }
 
-.dog-image {
-  max-width: 31%;
-  margin-bottom: 15px;
+.flex-item {
+  position: relative;
+  width: 300px;
+  height: 225px;
+  text-align: center;
   border: 1px solid white;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.dog-image {
+  height:auto;
+  width: 300px;
 }
 
 .overlay-image {
@@ -67,4 +76,30 @@ body {
   display: block;
   height: 300px;
   content: '';
+}
+
+.name-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.dog-image:hover .name-overlay {
+  opacity: .5;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

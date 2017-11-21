@@ -11,7 +11,12 @@ class DogImage extends Component {
 
   render() {
     return (
-        <img className="dog-image" src={this.props.imageSource} onClick={this.handleClick.bind(this, this.props.imageSource)} alt={this.props.alt} />
+      <div className="flex-item" onClick={this.handleClick.bind(this, this.props.imageSource)}>
+        <img className="dog-image" src={this.props.imageSource}  alt={this.props.alt} />
+        <div className="name-overlay">
+          <div className="name-text">{this.props.alt}</div>
+        </div>
+      </div>
     )
   }
 };
