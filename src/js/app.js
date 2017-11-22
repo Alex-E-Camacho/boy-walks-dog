@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DogImage from './dogimage.js';
 import Overlay from './overlay.js';
-require('../css/index.css'); 
+require('../css/index.css');
 
 class App extends Component {
   constructor(props) {
@@ -28,8 +28,11 @@ class App extends Component {
     let imageCollection = requireImages.keys().map(requireImages);
 
     let mappedImageCollection = imageCollection.map((dog) => {
+
+      let textAlt = dog.substr(dog.indexOf("/") + 1).slice(0, -4);
+
       return (
-        <DogImage imageSource={dog} imageClick={this.overlayDisplayOnClick} />
+        <DogImage imageSource={dog} imageClick={this.overlayDisplayOnClick} alt={textAlt} />
       )
     })
 
