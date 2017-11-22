@@ -92,12 +92,12 @@ body {
 }
 
 .flex-item:hover .name-overlay {
-  opacity: .5;
+  opacity: .75;
 }
 
 .name-text {
   color: white;
-  font-size: 60px;
+  font-size: 4vw;
   position: absolute;
   top: 50%;
   left: 50%;
