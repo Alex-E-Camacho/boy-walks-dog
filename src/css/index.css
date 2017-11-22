@@ -88,18 +88,19 @@ body {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #008CBA;
+  background-color: #9b9ea0;
 }
 
-.dog-image:hover .name-overlay {
+.flex-item:hover .name-overlay {
   opacity: .5;
 }
 
-.text {
+.name-text {
   color: white;
-  font-size: 20px;
+  font-size: 60px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Source Code Pro', monospace;
 }
